@@ -1388,8 +1388,10 @@
         observer.observe(section);
       });
 
-      function showProjectDetails(index) {
-        const project = projectDetails[index];
+      function showProjectDetails(title) {
+        const project = projectDetails.find(
+          (project) => project.title === title
+        );
         const modal = document.getElementById("projectModal");
         const content = document.getElementById("modalContent");
 
@@ -1773,7 +1775,7 @@
         projects.forEach((project, index) => {
           const card = document.createElement("div");
           card.className = "project-card";
-          card.onclick = () => showProjectDetails(index);
+          card.onclick = () => showProjectDetails(project.title);
 
           // Create highlighted versions of text
           const highlightedTitle = highlightText(project.title, searchTerm);
