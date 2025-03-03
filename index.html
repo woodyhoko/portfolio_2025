@@ -1233,11 +1233,18 @@
             <label>Technology</label>
             <select class="filter-select" id="techFilter">
               <option value="all">All Technologies</option>
-              <option value="PyTorch">PyTorch</option>
+              <option value="Python">Python</option>
+              <option value="Java">Java</option>
+              <option value="Assembly Language">Assembly Language</option>
+              <option value="MATLAB">MATLAB</option>
+              <option value="ASM">ASM</option>
+              <option value="C++">C++</option>
+              <option value="C#">C#</option>
+              <!-- <option value="PyTorch">PyTorch</option>
               <option value="TensorFlow">TensorFlow</option>
               <option value="GANs">GANs</option>
               <option value="Transformers">Transformers</option>
-              <option value="MLOps">MLOps</option>
+              <option value="MLOps">MLOps</option> -->
             </select>
           </div>
 
@@ -1245,10 +1252,12 @@
             <label>Category</label>
             <select class="filter-select" id="categoryFilter">
               <option value="all">All Categories</option>
+              <option value="Generative AI">Generative AI</option>
               <option value="Computer Vision">Computer Vision</option>
-              <option value="NLP">NLP</option>
-              <option value="MLOps">MLOps</option>
-              <option value="Deep Learning">Deep Learning</option>
+              <option value="Natural Language Processing">
+                Natural Language Processing
+              </option>
+              <option value="Big Data Analysis">Big Data Analysis</option>
             </select>
           </div>
 
@@ -1400,8 +1409,8 @@
                         <p>${project.challenges}</p>
                         <h3>Results</h3>
                         <p>${project.results}</p>
-                        <h3>GitHub</h3>
-                        <p>${project.github}</p>
+                        <h3>Link</h3>
+                        <p>${project.link}</p>
                     `;
 
         modal.style.display = "flex";
@@ -1431,38 +1440,324 @@
         {
           title: "Weather, Cloud distribution, Satellite Image Prediction",
           description:
-            "Designed and created models for various weather related prediction for solar power output estimation and prediction, result with accuracy over 99%. Due to confidential issue, no code are allowed to share.",
-          technologies: ["Tensorflow", "GenAI", "OpenCV", "Keras"],
-          category: "Computer Vision",
-          date: "2023-05",
-          challenges:
-            "Optimizing the model for real-time performance while maintaining quality.",
-          results: "3x faster inference compared to baseline implementation.",
-          github: "github.com/johndoe/neural-style",
+            "Designed and created models for weather forcast related predictions.",
+          technologies: [
+            "Generative AI",
+            "OpenCV",
+            "TensorFlow",
+            "Keras",
+            "Python",
+          ],
+          category: ["Computer Vision"],
+          date: "2020-05",
+          challenges: "...",
+          results: "...",
+          link: "N/A",
         },
         {
-          title: "Language Model",
+          title: "Auto driving car",
           description:
-            "Fine-tuned transformer-based language model for code generation.",
-          technologies: ["Transformers", "CUDA", "Python"],
-          category: "NLP",
-          date: "2023-02",
-          challenges:
-            "Training on diverse programming languages while maintaining consistency.",
-          results: "85% functional correctness on test suite.",
-          github: "github.com/johndoe/code-gen-lm",
+            "Design novel evolutionary algorithm and implemented in auto driving task, result is better than genetic algorithm.",
+          technologies: [
+            "Genetic Algorithm",
+            "Evolutionary Algorithm",
+            "Self-Supervised Learning",
+            "Teacher-student model",
+            "TensorFlow.js",
+            "D3.js",
+            "JavaScript",
+          ],
+          category: ["Evolutionary Algorithm"],
+          date: "2020-12",
+          challenges: "...",
+          results: "...",
+          link: "https://link.com/woodyhoko/2D-auto-driving-AI",
         },
         {
-          title: "MLOps Pipeline",
+          title: "Artificial Life",
           description:
-            "Built an end-to-end MLOps pipeline for automating model training and deployment.",
-          technologies: ["Kubernetes", "Docker", "MLOps"],
-          category: "MLOps",
-          date: "2022-11",
-          challenges:
-            "Ensuring reproducibility across different compute environments.",
-          results: "Reduced deployment time from days to hours.",
-          github: "github.com/johndoe/mlops-pipeline",
+            "A number of automated evolving creatures trying to survive in a limited resource environment.",
+          technologies: [
+            "Genetic Algorithm",
+            "Evolutionary Algorithm",
+            "Simulation",
+            "JavaFX",
+            "Java",
+          ],
+          category: ["Evolutionary Algorithm", "Simulation"],
+          date: "2017-05",
+          challenges: "...",
+          results: "...",
+          link: "https://github.com/woodyhoko/Artificial_Life",
+        },
+        {
+          title: "Tetris AI",
+          description:
+            "Made a Tetris game in ASM and implemented self learning AI.",
+          technologies: [
+            "Reinforcement Learning",
+            "Structured Learning",
+            "Assembly Language",
+          ],
+          category: ["Reinforcement Learning", "Game"],
+          date: "2017-01",
+          challenges: "...",
+          results: "...",
+          link: "https://github.com/woodyhoko/Tetris_AI",
+        },
+        {
+          title:
+            "A Type IIb Supernova from a Very Extended Low-mass Progenitor",
+          description:
+            "Result of the research in Caltech, SURF program. Published in The Astrophysical Journal Letters, 878:L5 (12pp).",
+          technologies: [
+            "Big Data Analysis",
+            "Physics Modeling",
+            "Simulation",
+            "Python",
+          ],
+          category: ["Big Data Analysis", "Simulation"],
+          date: "2018-08",
+          challenges: "...",
+          results: "...",
+          link: "https://cv.hoko.xyz/files/IIb.pdf",
+        },
+        {
+          title: "Facial Recognition and Tracking",
+          description:
+            "Auto detect faces -> determine new or old identity -> label and track in real time.",
+          technologies: [
+            "Computer Vision",
+            "Object Detection",
+            "Object Tracking",
+            "Facial Recognition",
+            "Video Streaming Analysis",
+            "PCA",
+            "FLDA",
+            "ECO",
+            "MATLAB",
+          ],
+          category: ["Computer Vision"],
+          date: "2017-12",
+          challenges: "...",
+          results: "...",
+          link: "https://github.com/woodyhoko/Facial_Recognition_and_Tracking",
+        },
+        {
+          title: "Fall Detection",
+          description:
+            "Fall detection model that can run on cheap/small IoT cameras to help contact health care for the old population.",
+          technologies: [
+            "Computer Vision",
+            "Supervised Learning",
+            "Video Streaming Analysis",
+            "TensorFlow",
+            "Keras",
+            "Python",
+          ],
+          category: ["Computer Vision"],
+          date: "2021-08",
+          challenges: "...",
+          results: "...",
+          link: "https://github.com/woodyhoko/Fall_Detection",
+        },
+        {
+          title: "Art Creation",
+          description:
+            "Generate art via self customized mapping techniques and different variations of STYLE-GAN model.",
+          technologies: [
+            "Generative AI",
+            "Text To Image",
+            "Style-GAN",
+            "TensorFlow",
+            "Keras",
+            "Python",
+          ],
+          category: ["Generative AI"],
+          date: "2021-08",
+          challenges: "...",
+          results: "...",
+          link: "https://github.com/woodyhoko/Art_Creation",
+        },
+        {
+          title: "Stock Simulator",
+          description:
+            "100 fully automated evolved AI trading in a stock simulator.",
+          technologies: [
+            "Genetic Algorithm",
+            "Evolutionary Algorithm",
+            "Simulation",
+            "Java",
+            "Processing 3",
+          ],
+          category: ["Evolutionary Algorithm", "Simulation"],
+          date: "2017-05",
+          challenges: "...",
+          results: "...",
+          link: "https://github.com/woodyhoko/Stock_Simulator",
+        },
+        {
+          title: "Liver Cancer Prediction",
+          description:
+            "Genetic sequence/mutation and the corresponding relation to liver cancer by statistical and machine learning model approches. The accuracy rate of determining long survival or short survival after being diagnoise with liver cancer was 75%-80% base on the patient gene.",
+          technologies: [
+            "Big Data Analysis",
+            "Supervised Learning",
+            "Tensorflow",
+            "Keras",
+            "Python",
+          ],
+          category: ["Big Data Analysis"],
+          date: "2019-05",
+          challenges: "...",
+          results: "...",
+          link: "https://github.com/woodyhoko/liver-cancer-prediction",
+        },
+        {
+          title: "Restaruant Advertisment/Description Integrity Analysis",
+          description:
+            "Predict how correlated is the restaurant's advertisement/description is. Anaylzed the correspondence of restaurant price/quality, listed properties, comments and reply from yelp data set.",
+          technologies: [
+            "Big Data Analysis",
+            "Supervised Learning",
+            "Tensorflow",
+            "Keras",
+            "Python",
+          ],
+          category: ["Big Data Analysis"],
+          date: "2019-05",
+          challenges: "...",
+          results: "...",
+          link: "https://github.com/woodyhoko/Restaruant-Advertisment-and-Description-Integrity-Analysis",
+        },
+        {
+          title: "Isaac, Moduler Upgrades in Unity 3D",
+          description:
+            "Inspired from Isaac game, implemented and designed extendable module upgrades in unity 3D, resulting in players having infinate upgrade combinations.",
+          technologies: ["Unity", "Generative Map", "C#"],
+          category: ["Game"],
+          date: "2019-05",
+          challenges: "...",
+          results: "...",
+          link: "https://github.com/woodyhoko/Isaac-Moduler-3D-approach",
+        },
+        {
+          title: "Backend and system design for factories",
+          description:
+            "Designed and implemented safty procedure and progress confirmation system for CNCfactory. Designed and developed multi-level permission access system for multiple companies. Node.js, sql and python are used in this job.",
+          technologies: [
+            "Database Synchronization",
+            "Cyber Security",
+            "MySQL",
+            "Node.js",
+            "JavaScript",
+          ],
+          category: ["Backend"],
+          date: "2020-06",
+          challenges: "...",
+          results: "...",
+          link: "...",
+        },
+        {
+          title: "M(L)ove - Dance move evaluation",
+          description:
+            "Extract poses from recorded dance video clip, analyze the similarity comparing to the reference video, and calculate the dance score across the song. This is a project for Hack the North.",
+          technologies: [
+            "Computer Vision",
+            "Pose Analysis",
+            "Supervised Learning",
+            "Video Streaming Analysis",
+            "Python",
+            "Vanilla JS",
+          ],
+          category: ["Computer Vision"],
+          date: "2021-1",
+          challenges: "...",
+          results: "...",
+          link: "...",
+        },
+        {
+          title: "Movie Genres classification / Chatroom Atmosphere Analysis",
+          description:
+            "By designing specially crafted hierarchical models and trained till f1 score higher than 90 with over 50000 movies’ subtitles, the model is capable of determining the atmosphere from chat history.",
+          technologies: [
+            "Natural Language Processing",
+            "Natural Language Understanding",
+            "Supervised Learning",
+            "Python",
+          ],
+          category: ["Natural Language Processing"],
+          date: "2018-06",
+          challenges: "...",
+          results: "...",
+          link: "...",
+        },
+        {
+          title: "Music Auto Generator",
+          description:
+            "At the year of 2018, Seq-GAN are used to generate music. It is now updated to use PRNN for a more robust and better performance by our team leader.",
+          technologies: ["Generative AI", "Seq-GAN", "Python"],
+          category: ["Generative AI"],
+          date: "2018-05",
+          challenges: "...",
+          results: "...",
+          link: "https://github.com/djosix/Performance-RNN-PyTorch",
+        },
+        {
+          title: "Conversational human computer interfaced",
+          description:
+            "Explored and implemented Named Entity Recognition, combined available API to achieve conversational control over complex task such as operations for email.",
+          technologies: [
+            "Natural Language Processing",
+            "Name Entity Recognition",
+            "Speach to Text",
+            "Text to Speach",
+            "Elastic Search",
+            "Python",
+          ],
+          category: ["Natural Language Processing"],
+          date: "2018-05",
+          challenges: "...",
+          results: "...",
+          link: "https://github.com/woodyhoko/Conversational-human-computer-interfaced/blob/main/poster.pdf",
+        },
+        {
+          title: "Search Engine for HKUST",
+          description:
+            "Crawl, label web pages and manage data base(RocksDB / MongoDB) for the web search engine for HKUST.",
+          technologies: [
+            "Natural Language Processing",
+            "RocksDB",
+            "MongoDB",
+            "Page Rank",
+            "Python",
+          ],
+          category: ["Natural Language Processing"],
+          date: "2019-05",
+          challenges: "...",
+          results: "...",
+          link: "https://github.com/webdev-jeff/comp4321-server",
+        },
+        {
+          title: "5 C++ Console UI Games",
+          description:
+            "My first cpp project as a freshman, a console game collection of 5.",
+          technologies: ["C++"],
+          category: ["Game"],
+          date: "2016-01",
+          challenges: "...",
+          results: "...",
+          link: "https://github.com/woodyhoko/First_Cpp_games",
+        },
+        {
+          title: "Visualize data classification by Neural Networks",
+          description: "Neural Networks implementation and visualization.",
+          technologies: ["Python"],
+          category: ["Game"],
+          date: "2017-01",
+          challenges: "Big Data Analysis",
+          results: "...",
+          link: "https://github.com/woodyhoko/Neural_Networks_coursework",
         },
         // Add more projects as needed
       ];
@@ -1555,7 +1850,8 @@
           const matchesTech =
             techFilter === "all" || project.technologies.includes(techFilter);
           const matchesCategory =
-            categoryFilter === "all" || project.category === categoryFilter;
+            categoryFilter === "all" ||
+            project.category.includes(categoryFilter);
 
           return matchesSearch && matchesTech && matchesCategory;
         });
