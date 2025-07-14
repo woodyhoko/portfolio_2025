@@ -204,9 +204,9 @@
         backdrop-filter: blur(7px);
         /* Gradient border */
         /* background: linear-gradient(
-          rgba(255, 255, 255, 0.05),
-          rgba(255, 255, 255, 0.03)
-        ); */
+          rgba(255, 255, 255, 0.05),
+          rgba(255, 255, 255, 0.03)
+        ); */
       }
 
       .project-card::before {
@@ -403,13 +403,13 @@
       }
 
       /* .nav-logo {
-        font-size: 1.5rem;
-        font-weight: bold;
-        background: linear-gradient(45deg, #00ff88, #00a1ff);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        z-index: 2;
-      } */
+        font-size: 1.5rem;
+        font-weight: bold;
+        background: linear-gradient(45deg, #00ff88, #00a1ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        z-index: 2;
+      } */
 
       .menu-toggle {
         display: none;
@@ -528,8 +528,8 @@
         }
 
         /* .nav-logo.corner {
-          left: 80px;
-        } */
+          left: 80px;
+        } */
         .nav-logo {
           font-size: 3rem;
         }
@@ -670,10 +670,6 @@
 
       .chat-header {
         margin-bottom: 1rem;
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 1rem;
       }
 
       .model-select {
@@ -718,31 +714,6 @@
         background: rgba(0, 161, 255, 0.1);
         align-self: flex-start;
         border: 1px solid rgba(0, 161, 255, 0.2);
-      }
-
-      /* New styles for the thinking process display */
-      .thinking-process {
-        background: rgba(128, 128, 128, 0.1);
-        align-self: flex-start;
-        border: 1px solid rgba(128, 128, 128, 0.2);
-        width: 100%;
-        max-width: 100%;
-      }
-
-      .thinking-process strong {
-        color: #aaa;
-        font-size: 0.9em;
-      }
-
-      .thinking-process pre {
-        background-color: rgba(0, 0, 0, 0.2);
-        padding: 0.5rem;
-        border-radius: 5px;
-        margin-top: 0.5rem;
-        font-size: 0.8em;
-        color: #ccc;
-        white-space: pre-wrap;
-        word-wrap: break-word;
       }
 
       .chat-input-container {
@@ -965,6 +936,7 @@
 
     <section class="hero">
       <div class="hero-content">
+        <!-- <h1>Ho Ko</h1> -->
         <div class="typing-text" id="typing-text"></div>
       </div>
       <div class="scroll-indicator" onclick="smoothScroll('about')">
@@ -996,24 +968,12 @@
       <div class="chat-container">
         <div class="chat-header">
           <select id="modelSelect" class="model-select">
-            <option value="gemma3n:latest">Normal Ho</option>
-            <option value="deepseek1.5:latest">Careful Ho</option>
+            <option value="llama3.2">Normal Ho</option>
           </select>
-          <label
-            style="
-              margin-left: 1rem;
-              display: inline-flex;
-              align-items: center;
-              gap: 0.5rem;
-              cursor: pointer;
-            "
-          >
-            <input type="checkbox" id="showThinkingToggle" />
-            Show Thinking Process
-          </label>
         </div>
         <div class="chat-messages" id="chatMessages">
-          </div>
+          <!-- Messages will be added here dynamically -->
+        </div>
         <div class="chat-input-container">
           <textarea
             id="promptInput"
@@ -1040,6 +1000,7 @@
     <section id="experience" class="section">
       <h2>Experience</h2>
       <div class="experience-container">
+        <!-- Top 3 experiences -->
         <div class="experience-item visible">
           <h3>Software Engineer - Google</h3>
           <p>2023 - Present</p>
@@ -1097,6 +1058,7 @@
 
         <div class="experience-divider"></div>
 
+        <!-- Hidden experiences -->
         <div class="experience-item hidden">
           <h3>
             Artificial Intelligence Developer/Researcher/Consultant - Ubiik
@@ -1185,7 +1147,7 @@
             </li>
             <li>
               Analyzed data from Elasticsearch database to determine malicious
-              user behavior to protect users from Browse phishing or malicious
+              user behavior to protect users from browsing phishing or malicious
               websites, and filtered dangerous hyperlinks in emails by the
               knowledge previously collecte.
             </li>
@@ -1283,7 +1245,12 @@
               <option value="ASM">ASM</option>
               <option value="C++">C++</option>
               <option value="C#">C#</option>
-              </select>
+              <!-- <option value="PyTorch">PyTorch</option>
+              <option value="TensorFlow">TensorFlow</option>
+              <option value="GANs">GANs</option>
+              <option value="Transformers">Transformers</option>
+              <option value="MLOps">MLOps</option> -->
+            </select>
           </div>
 
           <div class="filter-group">
@@ -1311,7 +1278,31 @@
       </div>
 
       <div class="projects-grid" id="projectsGrid">
+        <!-- <div class="project-card" onclick="showProjectDetails(0)">
+          <h3>Neural Style Transfer</h3>
+          <p>Real-time style transfer using GANs</p>
+          <div class="skill-tags">
+            <span class="skill-tag">PyTorch</span>
+            <span class="skill-tag">GANs</span>
+          </div>
         </div>
+        <div class="project-card" onclick="showProjectDetails(1)">
+          <h3>Language Model</h3>
+          <p>Fine-tuned transformer for code generation</p>
+          <div class="skill-tags">
+            <span class="skill-tag">Transformers</span>
+            <span class="skill-tag">CUDA</span>
+          </div>
+        </div>
+        <div class="project-card" onclick="showProjectDetails(2)">
+          <h3>MLOps Pipeline</h3>
+          <p>Automated ML deployment system</p>
+          <div class="skill-tags">
+            <span class="skill-tag">Kubernetes</span>
+            <span class="skill-tag">Docker</span>
+          </div>
+        </div> -->
+      </div>
     </section>
 
     <div id="projectModal" class="modal">
@@ -1410,24 +1401,24 @@
         const content = document.getElementById("modalContent");
 
         content.innerHTML = `
-                        <h2>${project.title}</h2>
-                        <p>${project.description}</p>
-                        <h3>Technologies Used</h3>
-                        <div class="skill-tags">
-                            ${project.technologies
-                          .map(
-                            (tech) =>
-                              `<span class="skill-tag">${tech}</span>`
-                          )
-                          .join("")}
-                        </div>
-                        <h3>Challenges</h3>
-                        <p>${project.challenges}</p>
-                        <h3>Results</h3>
-                        <p>${project.results}</p>
-                        <h3>Link</h3>
-                        <p>${project.link}</p>
-                    `;
+                        <h2>${project.title}</h2>
+                        <p>${project.description}</p>
+                        <h3>Technologies Used</h3>
+                        <div class="skill-tags">
+                            ${project.technologies
+                              .map(
+                                (tech) =>
+                                  `<span class="skill-tag">${tech}</span>`
+                              )
+                              .join("")}
+                        </div>
+                        <h3>Challenges</h3>
+                        <p>${project.challenges}</p>
+                        <h3>Results</h3>
+                        <p>${project.results}</p>
+                        <h3>Link</h3>
+                        <p>${project.link}</p>
+                    `;
 
         modal.style.display = "flex";
       }
@@ -1811,20 +1802,20 @@
           }
 
           card.innerHTML = `
-                    <h3>${highlightedTitle}</h3>
-                    <p>${highlightedDescription}</p>
-                    <div class="skill-tags">
-                      ${project.technologies
-                      .map(
-                        (tech) =>
-                          `<span class="skill-tag">${highlightText(
-                            tech,
-                            searchTerm
-                          )}</span>`
-                      )
-                      .join("")}
-                    </div>
-                  `;
+                    <h3>${highlightedTitle}</h3>
+                    <p>${highlightedDescription}</p>
+                    <div class="skill-tags">
+                      ${project.technologies
+                        .map(
+                          (tech) =>
+                            `<span class="skill-tag">${highlightText(
+                              tech,
+                              searchTerm
+                            )}</span>`
+                        )
+                        .join("")}
+                    </div>
+                  `;
 
           grid.appendChild(card);
         });
@@ -2033,17 +2024,17 @@
       // Updated typing text CSS
       const styleSheet = document.createElement("style");
       // styleSheet.textContent = `
-      //  .typing-text span.shuffling {
-      //      color: rgba(0, 255, 136, 0.3);
-      //      text-shadow: 0 0 5px rgba(0, 255, 136, 0.2);
-      //      transition: all 0.3s ease;
-      //    }
+      //   .typing-text span.shuffling {
+      //     color: rgba(0, 255, 136, 0.3);
+      //     text-shadow: 0 0 5px rgba(0, 255, 136, 0.2);
+      //     transition: all 0.3s ease;
+      //   }
 
-      //  .typing-text span.static {
-      //      color: #00ff88;
-      //      text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
-      //      transition: all 0.3s ease;
-      //    }
+      //   .typing-text span.static {
+      //     color: #00ff88;
+      //     text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+      //     transition: all 0.3s ease;
+      //   }
       // `;
       document.head.appendChild(styleSheet);
 
@@ -2309,10 +2300,11 @@
       }
 
       async function generateText(prompt, model) {
-        addMessage(prompt, "user");
+        const messageDiv = addMessage(prompt, "user");
         const assistantDiv = document.createElement("div");
         assistantDiv.className = "chat-message assistant";
 
+        // Create a container for text and typing indicator
         const contentContainer = document.createElement("span");
         const typingIndicator = createTypingIndicator();
         assistantDiv.appendChild(contentContainer);
@@ -2321,6 +2313,7 @@
         generateButton.disabled = true;
         chatHistory.push({ role: "user", content: prompt });
 
+        // Add the assistant's message div immediately
         chatMessages.appendChild(assistantDiv);
 
         try {
@@ -2339,7 +2332,6 @@
           }
 
           let fullResponse = "";
-          let finalMetadata = null;
           const reader = response.body.getReader();
           let buffer = "";
 
@@ -2347,23 +2339,21 @@
             const { value, done } = await reader.read();
             if (done) break;
 
+            // Convert the chunk to text and add to buffer
             buffer += new TextDecoder().decode(value);
+
+            // Process complete lines from buffer
             const lines = buffer.split("\n");
-            buffer = lines.pop() || "";
+            buffer = lines.pop() || ""; // Keep the last incomplete line in buffer
 
             for (const line of lines) {
               if (line.startsWith("data: ")) {
                 try {
                   const data = JSON.parse(line.substring(6));
-
                   if (data.message && data.message.content) {
                     fullResponse += data.message.content;
                     contentContainer.textContent = fullResponse;
                     chatMessages.scrollTop = chatMessages.scrollHeight;
-                  }
-
-                  if (data.done) {
-                    finalMetadata = data;
                   }
                 } catch (error) {
                   console.error("Error parsing JSON:", error);
@@ -2374,43 +2364,26 @@
 
           chatHistory.push({ role: "assistant", content: fullResponse });
           if (typingIndicator) typingIndicator.remove();
-
-          const showThinkingToggle =
-            document.getElementById("showThinkingToggle");
-          if (showThinkingToggle.checked && finalMetadata) {
-            const thinkingDiv = document.createElement("div");
-            thinkingDiv.className = "chat-message thinking-process";
-
-            const title = document.createElement("strong");
-            title.textContent = "Thinking Process (Final Stats)";
-            thinkingDiv.appendChild(title);
-
-            const pre = document.createElement("pre");
-            const { context, ...displayMetadata } = finalMetadata;
-            pre.textContent = JSON.stringify(displayMetadata, null, 2);
-            thinkingDiv.appendChild(pre);
-
-            chatMessages.appendChild(thinkingDiv);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-          }
+          generateButton.disabled = false;
         } catch (error) {
           console.error("Fetch error:", error);
-          if (typingIndicator) typingIndicator.remove();
+          typingIndicator.remove();
           assistantDiv.remove();
           addMessage(
             "Sorry, there was an error processing your request.",
             "assistant"
           );
-        } finally {
           generateButton.disabled = false;
         }
       }
 
+      // Auto-resize textarea as user types
       promptInput.addEventListener("input", function () {
         this.style.height = "auto";
         this.style.height = this.scrollHeight + "px";
       });
 
+      // Handle send button click
       generateButton.addEventListener("click", () => {
         const prompt = promptInput.value.trim();
         if (prompt) {
@@ -2420,6 +2393,7 @@
         }
       });
 
+      // Handle Enter key (with shift+enter for new line)
       promptInput.addEventListener("keydown", (e) => {
         if (e.key === "Enter" && !e.shiftKey) {
           e.preventDefault();
@@ -2427,6 +2401,7 @@
         }
       });
 
+      // Add initial greeting message
       setTimeout(() => {
         addMessage(
           "Hi! I'm Ho's AI assistant. How can I help you today?",
@@ -2443,6 +2418,7 @@
           divider.classList.add("visible");
           hiddenItems.forEach((item, index) => {
             item.classList.remove("hidden");
+            // Add slight delay for each item
             setTimeout(() => {
               item.classList.add("visible");
             }, index * 100);
@@ -2453,6 +2429,7 @@
           hiddenItems.forEach((item) => {
             console.log(item);
             item.classList.remove("visible");
+            // Add transition before hiding
             setTimeout(() => {
               item.classList.add("hidden");
             }, 500);
@@ -2460,6 +2437,7 @@
           divider.classList.remove("visible");
           btn.querySelector("span").textContent = "Show More Experience";
 
+          // Smooth scroll to last visible item
           const lastVisibleItem = document.querySelector(
             ".experience-item:not(.hidden)"
           );
@@ -2472,6 +2450,7 @@
         }
       }
 
+      // Add intersection observer for initial animation
       const observer2 = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
