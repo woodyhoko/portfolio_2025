@@ -1016,6 +1016,43 @@
         font-size: 0.8rem;
         margin-top: 0.25rem;
       }
+
+      .thought-process {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        padding: 0.25rem 0.75rem;
+      }
+
+      .thought-process summary {
+        cursor: pointer;
+        color: #888;
+        font-size: 0.9em;
+        padding: 0.5rem 0;
+        outline: none;
+        transition: color 0.2s ease;
+      }
+
+      .thought-process summary:hover {
+        color: #00ff88;
+      }
+
+      .thought-process pre {
+        background-color: rgba(0, 0, 0, 0.2);
+        padding: 0.75rem;
+        border-radius: 6px;
+        margin-top: 0.5rem;
+        color: #ccc;
+        font-size: 0.85em;
+        white-space: pre-wrap; /* Allows text to wrap */
+        word-wrap: break-word; /* Breaks long words */
+        font-family: monospace;
+      }
+
+      .main-response {
+        padding-top: 0.5rem;
+      }
     </style>
   </head>
   <body>
@@ -2497,6 +2534,57 @@
 
           chatHistory.push({ role: "assistant", content: fullResponse });
           if (typingIndicator) typingIndicator.remove();
+          // ** MODIFICATION START **
+          const carefulModelId = "deepseek-r1:1.5b";
+          const thinkTagStart = "<think>";
+          const thinkTagEnd = "</think>";
+
+          // Check if it's the careful model and the response has a thinking part
+          if (
+            model === carefulModelId &&
+            fullResponse.includes(thinkTagStart) &&
+            fullResponse.includes(thinkTagEnd)
+          ) {
+            // Extract the thinking and main response parts
+            const thinkStartPos = fullResponse.indexOf(thinkTagStart);
+            const thinkEndPos = fullResponse.indexOf(thinkTagEnd);
+            
+            const thinkingContent = fullResponse.substring(thinkStartPos + thinkTagStart.length, thinkEndPos).trim();
+            const mainResponseContent = fullResponse.substring(thinkEndPos + thinkTagEnd.length).trim();
+
+            // Clear the content container and build the new structure
+            contentContainer.innerHTML = '';
+
+            // Create the collapsible details element for the thinking part
+            const details = document.createElement('details');
+            details.className = 'thought-process';
+
+            const summary = document.createElement('summary');
+            summary.textContent = 'View thought process';
+            details.appendChild(summary);
+
+            const pre = document.createElement('pre');
+            pre.textContent = thinkingContent;
+            details.appendChild(pre);
+            
+            contentContainer.appendChild(details);
+
+            // Create a container for the main response
+            const mainResponseDiv = document.createElement('div');
+            mainResponseDiv.className = 'main-response';
+            mainResponseDiv.textContent = mainResponseContent;
+            contentContainer.appendChild(mainResponseDiv);
+            
+            // Update chat history with the full, original response for context
+            chatHistory.push({ role: "assistant", content: fullResponse });
+
+          } else {
+            // Original behavior for other models or responses without <think> tags
+            contentContainer.textContent = fullResponse;
+            chatHistory.push({ role: "assistant", content: fullResponse });
+          }
+          // ** MODIFICATION END **
+
           generateButton.disabled = false;
         } catch (error) {
           console.error("Fetch error:", error);
