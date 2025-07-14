@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AI/ML Engineer Portfolio</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
     <style>
       * {
         margin: 0;
@@ -1053,6 +1055,16 @@
       .main-response {
         padding-top: 0.5rem;
       }
+
+      .chat-message p:last-child {
+        /* This ensures there's no extra space after the final paragraph */
+        margin-bottom: -1rem;
+        }
+
+      .chat-message ol,
+        .chat-message ul {
+        padding-left: 1.2rem; /* Or padding-inline-start: 1.2rem; */
+        }
     </style>
   </head>
   <body>
@@ -2517,7 +2529,7 @@
                   const data = JSON.parse(line.substring(6));
                   if (data.message && data.message.content) {
                     fullResponse += data.message.content;
-                    contentContainer.textContent = fullResponse;
+                    contentContainer.innerHTML = DOMPurify.sanitize(marked.parse(fullResponse));
                     chatMessages.scrollTop = chatMessages.scrollHeight;
                   }
                 } catch (error) {
@@ -2530,7 +2542,7 @@
           fullResponse = fullResponse.trimEnd();
 
           // Update the chat display with the cleaned text
-          contentContainer.textContent = fullResponse;
+          contentContainer.innerHTML = DOMPurify.sanitize(marked.parse(fullResponse));
 
           chatHistory.push({ role: "assistant", content: fullResponse });
           if (typingIndicator) typingIndicator.remove();
@@ -2564,7 +2576,7 @@
             details.appendChild(summary);
 
             const pre = document.createElement('pre');
-            pre.textContent = thinkingContent;
+            pre.innerHTML = DOMPurify.sanitize(marked.parse(thinkingContent));
             details.appendChild(pre);
             
             contentContainer.appendChild(details);
@@ -2572,7 +2584,7 @@
             // Create a container for the main response
             const mainResponseDiv = document.createElement('div');
             mainResponseDiv.className = 'main-response';
-            mainResponseDiv.textContent = mainResponseContent;
+            mainResponseDiv.innerHTML = DOMPurify.sanitize(marked.parse(mainResponseContent));
             contentContainer.appendChild(mainResponseDiv);
             
             // Update chat history with the full, original response for context
@@ -2580,7 +2592,7 @@
 
           } else {
             // Original behavior for other models or responses without <think> tags
-            contentContainer.textContent = fullResponse;
+            contentContainer.innerHTML = DOMPurify.sanitize(marked.parse(fullResponse));
             chatHistory.push({ role: "assistant", content: fullResponse });
           }
           // ** MODIFICATION END **
